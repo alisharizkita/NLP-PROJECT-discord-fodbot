@@ -1,9 +1,13 @@
 import json
 import random
-from src.food_patterns import FoodPatterns
+from food_patterns import FoodPatterns
 
 class FoodRecommendationEngine:
-    def __init__(self, db_path="restaurants.json"):
+    def __init__(self, db_path=None):
+        import os
+        if db_path is None:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            db_path = os.path.join(base_dir, "..", "data", "restaurant.json")
         with open(db_path, "r", encoding="utf-8") as f:
             self.restaurants = json.load(f)
         self.patterns = FoodPatterns()
@@ -38,3 +42,9 @@ class FoodRecommendationEngine:
             }
 
         return random.choice(candidates)
+
+    def process(self, user_input: str) -> dict:
+        """
+        Extract budget, location, and food_type from user input.
+        """
+        return self.patterns.detect(user_input)
