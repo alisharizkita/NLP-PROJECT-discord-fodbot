@@ -168,7 +168,7 @@
       {
         "name": "Marugame Udon",
         "specialty": "Udon",
-        "food_type": "japanese",
+        "food_type": "noodle",
         "mood": ["neutral", "tired", "celebration", "happy"],
         "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": "vegetarian options"
@@ -244,7 +244,7 @@
       {
         "name": "Drink Corner Kantin FT",
         "specialty": "Aneka Jus dan Minuman Dingin",
-        "food_type": "dessert",
+        "food_type": "beverages",
         "mood": ["neutral", "stress", "tired", "sick", "bored", "happy"],
         "time_based": ["breakfast", "lunch","afternoon"],
         "dietary_restriction": ""
@@ -256,7 +256,7 @@
       {
         "name": "GrabFood Delivery - Kopi Kenangan",
         "specialty": "Es Kopi Kenangan Mantan",
-        "food_type": "dessert",
+        "food_type": "beverages",
         "mood": ["neutral", "tired", "stress"],
         "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
@@ -264,7 +264,7 @@
       {
         "name": "GoFood Delivery - Gokana Ramen",
         "specialty": "Ramen",
-        "food_type": "japanese",
+        "food_type": ["noodle", "japanese"],
         "mood": ["neutral", "happy", "sick"],
         "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
