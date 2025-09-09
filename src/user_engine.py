@@ -11,26 +11,9 @@ class UserEngine:
         self.conversation_engine = ConversationEngine()
 
     def process_message(self, user_input: str) -> dict:
-        """
-        Proses pesan dari user → kembalikan structured response
-        untuk diintegrasikan dengan Discord bot.
-        """
-        reply_text = self.conversation_engine.reply(user_input)
+        
 
-        # Simpan konteks (jika dibutuhkan untuk memory)
-        mood = self.conversation_engine.detect_mood(user_input)
-        time = self.conversation_engine.detect_time(user_input)
-        diet = self.conversation_engine.detect_diet(user_input)
-
-        response = {
-            "reply": reply_text,
-            "mood": mood,
-            "time": time,
-            "diet": diet,
-            "raw_input": user_input
-        }
-
-        return response
+        return self.conversation_engine.reply(user_input)
 
 # ✅ Interactive Testing
 if __name__ == "__main__":

@@ -22,7 +22,7 @@
         "specialty": ["Es Pisang Ijo", "Coto Makassar"],
         "food_type": ["traditional","dessert"],
         "mood": ["happy", "celebration", "neutral"],
-        "time_based": "afternoon",
+        "time_based": ["afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
@@ -30,7 +30,7 @@
         "specialty": "Aneka Bakso",
         "food_type": "traditional",
         "mood": ["stress", "bored", "tired", "sick"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch","afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
@@ -38,7 +38,7 @@
         "specialty": ["Nasi Lodeh","Pisang Goreng"],
         "food_type": "traditional",
         "mood": ["stress", "bored", "tired"],
-        "time_based": "morning-afternoon",
+        "time_based": ["breakfast", "lunch", "afternoon"],
         "dietary_restriction": ""
       },
       {
@@ -46,7 +46,7 @@
         "specialty": "Ayam Geprek",
         "food_type": "rice",
         "mood": "casual",
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
@@ -54,7 +54,7 @@
         "specialty": "Nasi Sayur Komplit",
         "food_type": "traditional",
         "mood": ["neutral", "stress", "tired"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
@@ -62,7 +62,7 @@
         "specialty": "Flavored Milk",
         "food_type": "dessert",
         "mood": ["happy", "celebration", "neutral", "bored"],
-        "time_based": "afternoon-night",
+        "time_based": ["afternoon", "night"],
         "dietary_restriction": ""
       }
     ],
@@ -72,8 +72,8 @@
         "specialty": "Fried Chicken & Burgers",
         "food_type": "western",
         "mood": ["neutral", "happy", "stress"],
-        "time_based": "09:00–21:00",
-        "dietary_restriction": "halal options"
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
+        "dietary_restriction": "halal"
       },
       {
         "name": "McDonald's Kaliurang",
@@ -88,7 +88,7 @@
         "specialty": "Lalapan Sambal Variants",
         "food_type": "traditional",
         "mood": ["stress", "bored", "neutral"],
-        "time_based": "10:00–22:00",
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
         "dietary_restriction": "halal"
       },
       {
@@ -96,7 +96,7 @@
         "specialty": "Nasi Pecel (SGPC)",
         "food_type": "rice",
         "mood": ["neutral", "tired", "bored"],
-        "time_based": "07:00–21:00",
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
         "dietary_restriction": "vegetarian-friendly options"
       },
       {
@@ -112,7 +112,7 @@
         "specialty": "Coffee & Snacks",
         "food_type": "western",
         "mood": ["bored", "neutral", "happy"],
-        "time_based": "morning-midnight",
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
         "dietary_restriction": ""
       },
       {
@@ -120,7 +120,7 @@
         "specialty": "Sate Ayam Merah",
         "food_type": "traditional",
         "mood": ["celebration", "happy", "neutral"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
@@ -128,7 +128,7 @@
         "specialty": "Bento Box",
         "food_type": "japanese",
         "mood": ["neutral", "happy", "celebration"],
-        "time_based": "10am-10pm",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": "halal"
       },
       {
@@ -136,7 +136,7 @@
         "specialty": "Gelato & Sorbet",
         "food_type": "dessert",
         "mood": ["happy", "celebration", "bored"],
-        "time_based": "09:00–22:30",
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
         "dietary_restriction": "dairy-free sorbet options"
       },
       {
@@ -144,15 +144,15 @@
         "specialty": "Javanese Cuisine",
         "food_type": "traditional",
         "mood": ["neutral", "stress", "tired"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
         "name": "Warung Gudeg Yu Djum",
         "specialty": "Gudeg",
-        "food_type": ["neutral", "happy", "stress"],
-        "mood": "authentic",
-        "time_based": "morning-lunch",
+        "food_type": "traditional",
+        "mood": ["neutral", "happy", "stress"],
+        "time_based": ["breakfast", "lunch"],
         "dietary_restriction": ""
       }
     ],
@@ -162,7 +162,7 @@
         "specialty": "Salmon Sushi",
         "food_type": "japanese",
         "mood": ["celebration", "happy", "neutral"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": "halal options"
       },
       {
@@ -170,7 +170,7 @@
         "specialty": "Udon",
         "food_type": "japanese",
         "mood": ["neutral", "tired", "celebration", "happy"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": "vegetarian options"
       },
       {
@@ -178,7 +178,7 @@
         "specialty": "Samgyeopsal",
         "food_type": "korean",
         "mood": ["celebration", "happy", "neutral"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": "halal"
       },
       {
@@ -186,7 +186,7 @@
         "specialty": "Coffee & Pasta",
         "food_type": "western",
         "mood": ["tired", "neutral", "stress"],
-        "time_based": "10am-10pm",
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
         "dietary_restriction": "halal"
       },
       {
@@ -194,7 +194,7 @@
         "specialty": "All You Can Eat Shabu",
         "food_type": "japanese",
         "mood": ["celebration", "happy", "neutral"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
       }
     ]
@@ -206,7 +206,7 @@
         "specialty": "Siomay Ikan Saus Kacang",
         "food_type": "traditional",
         "mood": ["neutral", "stress", "tired", "bored", "happy"],
-        "time_based": "morning-lunch",
+        "time_based": ["breakfast", "lunch", "afternoon"],
         "dietary_restriction": ""
       },
       {
@@ -214,7 +214,7 @@
         "specialty": "Ayam Geprek",
         "food_type": "rice",
         "mood": ["neutral", "stress", "tired"],
-        "time_based": "morning-evening",
+        "time_based": ["breakfast", "lunch", "afternoon"],
         "dietary_restriction": ""
       },
       {
@@ -222,7 +222,7 @@
         "specialty": "Susu Segar",
         "food_type": ["rice", "traditional"],
         "mood": ["neutral", "stress", "tired"],
-        "time_based": "afternoon",
+        "time_based": ["breakfast", "lunch", "afternoon"],
         "dietary_restriction": ""
       },
       {
@@ -230,7 +230,7 @@
         "specialty": ["Bakso", "Mie Ayam"],
         "food_type": ["noodle", "traditional"],
         "mood": ["neutral", "stress", "tired", "sick", "bored"],
-        "time_based": "afternoon",
+        "time_based": ["lunch", "afternoon"],
         "dietary_restriction": ""
       },
       {
@@ -238,7 +238,7 @@
         "specialty": "Soto Seger dan Aneka Sate",
         "food_type": ["rice", "traditional"],
         "mood": ["neutral", "stress", "tired", "sick", "bored"],
-        "time_based": "afternoon",
+        "time_based": ["breakfast", "lunch","afternoon"],
         "dietary_restriction": ""
       },
       {
@@ -246,7 +246,7 @@
         "specialty": "Aneka Jus dan Minuman Dingin",
         "food_type": "dessert",
         "mood": ["neutral", "stress", "tired", "sick", "bored", "happy"],
-        "time_based": "afternoon",
+        "time_based": ["breakfast", "lunch","afternoon"],
         "dietary_restriction": ""
       }
     ]
@@ -258,7 +258,7 @@
         "specialty": "Es Kopi Kenangan Mantan",
         "food_type": "dessert",
         "mood": ["neutral", "tired", "stress"],
-        "time_based": "morning-night",
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
@@ -266,7 +266,7 @@
         "specialty": "Ramen",
         "food_type": "japanese",
         "mood": ["neutral", "happy", "sick"],
-        "time_based": "lunch-dinner",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": ""
       },
       {
@@ -274,7 +274,7 @@
         "specialty": ["Mie Pedas", "Dimsum"],
         "food_type": "noodle",
         "mood": ["neutral", "stress", "tired", "bored", "happy", "celebration"],
-        "time_based": "afternoon-night",
+        "time_based": "24h",
         "dietary_restriction": ""
       }
     ],
@@ -285,7 +285,7 @@
         "specialty": "Pan Pizza",
         "food_type": "western",
         "mood": ["celebration", "happy", "neutral"],
-        "time_based": "10am-10pm",
+        "time_based": ["lunch", "afternoon", "dinner"],
         "dietary_restriction": "vegetarian options"
       }
     ]
