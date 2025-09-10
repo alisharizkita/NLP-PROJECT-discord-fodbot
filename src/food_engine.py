@@ -26,8 +26,15 @@ class FoodRecommendationEngine:
         # Filter location & budget
         if location:
             candidates = [r for r in candidates if r.get("location") == location]
-        if budget:
-            candidates = [r for r in candidates if r.get("budget") == budget]
+            
+        # Budget hierarchy filtering
+        budget_order = {"low": 1, "medium": 2, "high": 3}
+        if budget and budget.lower() in budget_order:
+            max_level = budget_order[budget.lower()]
+            candidates = [
+                r for r in candidates
+                if budget_order.get(r.get("budget","low"),0) <= max_level
+            ]
 
         # Filter food_type
         if food_type:
@@ -56,7 +63,7 @@ class FoodRecommendationEngine:
             ]
 
         # Filter dietary_restriction
-        if dietary_restriction:
+        if dietary_restriction and dietary_restriction.lower() != "none":
             candidates = [
                 r for r in candidates
                 if (r.get("dietary_restriction") == dietary_restriction)

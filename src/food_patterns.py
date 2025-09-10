@@ -36,7 +36,7 @@ class FoodPatterns:
             (r'stress|pusing|capek\s*kuliah', 'stress'),
             (r'tired|lelah|ngantuk', 'tired'),
             (r'happy|senang|bahagia', 'happy'),
-            (r'neutral|biasa\s*aja', 'neutral'),
+            (r'neutral|biasa\s*aja|biasa|b\s*aja', 'neutral'),
             (r'bored|gabut|bosan|sedih', 'bored'),
             (r'celebration|merayakan|ulang\s*tahun|traktiran|traktir|party', 'celebration'),
             (r'sakit|flu|kurang\s*enak', 'sick'),
@@ -60,6 +60,7 @@ class FoodPatterns:
             (r'vegan', 'vegan'),
             (r'dairy\s*free|bebas\s*susu', 'dairy-free sorbet options'),
             (r'vegetarian\s*friendly', 'vegetarian-friendly options'),
+            (r'none|tidak\s*ada|bebas|gak\s*ada|gaada', 'none'),
         ]
 
     def extract_budget_number(self, match):

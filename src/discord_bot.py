@@ -75,13 +75,15 @@ async def on_message(message):
         content = message.content.strip()
 
         # Skip jika user ketik "\" atau enter
-        if content not in ["", "\\"]:
+        if key == "dietary_restriction" and content in ["", "\\"]:
+            session["prefs"][key] = "none"
+        else:
             parsed = patterns.detect(content)
-            # Simpan jawaban sesuai key
-            if parsed.get(key):
+            if key in parsed:
                 session["prefs"][key] = parsed[key]
             else:
                 session["prefs"][key] = content
+
 
         # Naik ke pertanyaan berikutnya
         session["step"] += 1
