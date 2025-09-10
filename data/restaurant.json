@@ -195,7 +195,7 @@
     "food_type": "japanese",
     "mood": ["celebration", "happy", "neutral"],
     "time_based": ["lunch", "afternoon", "dinner"],
-    "dietary_restriction": "halal options",
+    "dietary_restriction": "halal",
     "location": "off-campus",
     "budget": "high"
   },
