@@ -47,13 +47,13 @@ Buat file .env di root folder:
 
 DISCORD_TOKEN=your_discord_bot_token
 
-##▶️ *Run*
+## ▶️ *Run*
 
 Untuk menjalankan bot Discord:
 
 python src/discord_bot.py
 
-##💡 *Example Usage*
+## 💡 *Example Usage*
 
 User di Discord:
 
