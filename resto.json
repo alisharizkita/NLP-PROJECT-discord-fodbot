@@ -185,7 +185,7 @@
     "food_type": "noodle",
     "location_detection": "off-campus",
     "budget_analysis": "low",
-    "mood": "crowded, student",
+    "mood": "neutral",
     "time_based": "10:00–22:00",
     "dietary_restriction": "halal"
   },

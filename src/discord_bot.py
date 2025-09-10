@@ -1,89 +1,104 @@
 import os
+from dotenv import load_dotenv
 import discord
+from discord.ext import commands
 from food_engine import FoodRecommendationEngine
 from food_patterns import FoodPatterns
-from dotenv import load_dotenv
 
+# Load token dari .env
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
-intents.messages = True
+intents.message_content = True
+bot = commands.Bot(command_prefix="!", intents=intents)
 
-client = discord.Client(intents=intents)
+# Engine & patterns
 engine = FoodRecommendationEngine()
 patterns = FoodPatterns()
 
-# Track user states: {user_id: {"step": int, "prefs": dict}}
-user_states = {}
+# Session tiap user
+user_sessions = {}
 
+# Pertanyaan berurutan
 questions = [
-    ("food_type", "Kamu lagi pengen makan apa nih?😁"),
-    ("location", "Kamu sekarang lagi di mana?📍"),
-    ("budget", "Berapa budget yang kamu punya?💸"),
-    ("mood", "Mood kamu lagi gimana sekarang?💓"),
-    ("time_based", "Mau buat sarapan, makan siang, atau makan malam nih?⏰"),
-    ("dietary_restriction", "Apa dietary restriction kamu?🚫"),
+    ("food_type", "Kamu lagi pengen makan apa nih?😁 "),
+    ("location", "Kamu sekarang lagi di mana?📍 "),
+    ("budget", "Berapa budget yang kamu punya?💸 "),
+    ("mood", "Mood kamu lagi gimana sekarang?💓 "),
+    ("time_based", "Mau buat sarapan, makan siang, atau makan malam nih?⏰ "),
+    ("dietary_restriction", "Apa dietary restriction kamu?🚫 "),
 ]
 
-@client.event
+@bot.event
 async def on_ready():
-    print(f'Bot connected as {client.user}')
+    print(f"✅ Bot sudah login sebagai {bot.user}")
 
-@client.event
+@bot.command(name="start", aliases=["mulai"])
+async def start_chat(ctx):
+    user_id = ctx.author.id
+
+    # Reset session lama jika ada
+    if user_id in user_sessions:
+        del user_sessions[user_id]
+
+    # Buat session baru
+    user_sessions[user_id] = {"step": 0, "prefs": {}}
+
+    await ctx.send("Halo👋! Aku food chatbot yang siap bantu kasih rekomendasi makanan🍽️")
+    await ctx.send("Kamu bisa ketik '!start' atau '!mulai' kapan saja untuk mulai ulang ➡️")
+    await ctx.send(questions[0][1])
+
+@bot.event
 async def on_message(message):
-    if message.author == client.user or not message.guild:
+    if message.author == bot.user:
         return
 
-    user_id = str(message.author.id)
+    # Abaikan pesan yang merupakan command
+    if message.content.startswith(bot.command_prefix):
+        await bot.process_commands(message)  # tetap jalankan command
+        return
+
+    user_id = message.author.id
     content = message.content.strip()
 
-    # Start new conversation if user not in state or says "mulai"
-    if user_id not in user_states or content.lower() in ["mulai", "start", "halo", "hi"]:
-        user_states[user_id] = {"step": 0, "prefs": {}}
-        await message.channel.send(
-            "Halo👋! Aku food chatbot yang siap bantu kasih rekomendasi makanan🍽️\n"
-            "Kamu bisa ketik 'mulai' kapan saja untuk mulai ulang.\n\n"
-            + questions[0][1]
-        )
+    # Kalau user belum mulai chat → abaikan
+    if user_id not in user_sessions:
         return
 
-    state = user_states[user_id]
-    step = state["step"]
-    prefs = state["prefs"]
+    session = user_sessions[user_id]
+    step = session["step"]
 
-    key, question = questions[step]
+    # Tangani pertanyaan saat ini
+    if step < len(questions):
+        key, _ = questions[step]
+        content = message.content.strip()
 
-    # Handle skip
-    if content.strip() in ["", "\\"]:
-        step += 1
-        if step < len(questions):
-            state["step"] = step
-            await message.channel.send(questions[step][1])
-            return
-    else:
-        parsed = patterns.detect(content)
-        if parsed.get(key):
-            prefs[key] = parsed[key]
+        # Skip jika user ketik "\" atau enter
+        if content not in ["", "\\"]:
+            parsed = patterns.detect(content)
+            # Simpan jawaban sesuai key
+            if parsed.get(key):
+                session["prefs"][key] = parsed[key]
+            else:
+                session["prefs"][key] = content
 
-        step += 1
-        if step < len(questions):
-            state["step"] = step
-            await message.channel.send(questions[step][1])
-            return
+        # Naik ke pertanyaan berikutnya
+        session["step"] += 1
 
-    # All questions answered → recommendation
-    result = engine.get_recommendation(prefs)
-    if "error" in result:
-        await message.channel.send(result["error"])
-    else:
-        reply = "Restoran yang cocok dengan preferensimu:\n"
-        for r in result["restaurants"]:
-            reply += f"- {r['name']}\n"
-        await message.channel.send(reply)
-
-    # Reset session
-    user_states.pop(user_id, None)
+        if session["step"] < len(questions):
+            await message.channel.send(questions[session["step"]][1])
+        else:
+            # Semua pertanyaan selesai → kasih rekomendasi
+            result = engine.get_recommendation(session["prefs"])
+            if "error" in result:
+                await message.channel.send(f"❌ {result['error']}")
+            else:
+                await message.channel.send("🍽️ Rekomendasi restoran:")
+                for r in result["restaurants"]:
+                    await message.channel.send(f"- {r['name']} ({r['specialty']})")
+            # Reset session
+            del user_sessions[user_id]
 
 if __name__ == "__main__":
-    client.run(TOKEN)
+    bot.run(TOKEN)

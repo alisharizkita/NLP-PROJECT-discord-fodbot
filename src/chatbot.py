@@ -1,65 +1,80 @@
+import discord
+from discord.ext import commands
 from food_engine import FoodRecommendationEngine
 from food_patterns import FoodPatterns
 
-def run_chatbot():
-    print("Halo👋! Aku food chatbot yang siap bantu kasih rekomendasi makanan🍽️")
-    print("Kamu bisa kasih tau aku apa yang kamu mau, misal nasi, mie, sushi, minuman segar, dll.")
-    print("Kalau mau skip pertanyaan, ketik '\\' atau enter ➡️")
+intents = discord.Intents.default()
+intents.message_content = True
 
-    engine = FoodRecommendationEngine()
-    patterns = FoodPatterns()
+bot = commands.Bot(command_prefix="!", intents=intents)
 
-    prefs = {}
+# Engine & patterns
+engine = FoodRecommendationEngine()
+patterns = FoodPatterns()
 
-    # Step 1: Food type
-    answer_food = input("\nKamu lagi pengen makan apa nih?😁 ")
-    parsed = patterns.detect(answer_food)
-    if parsed.get("food_type"):
-        prefs["food_type"] = parsed["food_type"]
+# Session tiap user
+user_sessions = {}
 
-    # Step 2: Location
-    answer_location = input("Kamu sekarang lagi di mana?📍 ")
-    if answer_location.strip() not in ["", "\\"]:
-        parsed = patterns.detect(answer_location)
-        if parsed.get("location"):
-            prefs["location"] = parsed["location"]
+# Pertanyaan berurutan
+questions = [
+    ("food_type", "Kamu lagi pengen makan apa nih?😁 "),
+    ("location", "Kamu sekarang lagi di mana?📍 "),
+    ("budget", "Berapa budget yang kamu punya?💸 "),
+    ("mood", "Mood kamu lagi gimana sekarang?💓 "),
+    ("time_based", "Mau buat sarapan, makan siang, atau makan malam nih?⏰ "),
+    ("dietary_restriction", "Apa dietary restriction kamu?🚫 "),
+]
 
-    # Step 3: Budget
-    answer_budget = input("Berapa budget yang kamu punya?💸 ")
-    if answer_budget.strip() not in ["", "\\"]:
-        parsed = patterns.detect(answer_budget)
-        if parsed.get("budget"):
-            prefs["budget"] = parsed["budget"]
+@bot.event
+async def on_ready():
+    print(f"✅ Bot sudah login sebagai {bot.user}")
 
-    # Step 4: Mood
-    answer_mood = input("Mood kamu lagi gimana sekarang?💓 ")
-    if answer_mood.strip() not in ["", "\\"]:
-        parsed = patterns.detect(answer_mood)
-        if parsed.get("mood"):
-            prefs["mood"] = parsed["mood"]
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
 
-    # Step 5: Time
-    answer_time = input("Mau buat sarapan, makan siang, atau makan malam nih?⏰ ")
-    if answer_time.strip() not in ["", "\\"]:
-        parsed = patterns.detect(answer_time)
-        if parsed.get("time_based"):
-            prefs["time_based"] = parsed["time_based"]
+    user_id = message.author.id
+    content = message.content.strip()
 
-    # Step 6: Dietary restriction
-    answer_diet = input("Apa dietary restriction kamu?🚫 ")
-    if answer_diet.strip() not in ["", "\\"]:
-        parsed = patterns.detect(answer_diet)
-        if parsed.get("dietary_restriction"):
-            prefs["dietary_restriction"] = parsed["dietary_restriction"]
+    # Kalau user ketik "mulai" → reset sesi
+    if content.lower() == "mulai":
+        user_sessions[user_id] = {"step": 0, "prefs": {}}
+        await message.channel.send("Halo👋! Aku food chatbot yang siap bantu kasih rekomendasi makanan🍽️")
+        await message.channel.send("Kamu bisa ketik 'mulai' kapan saja untuk mulai ulang.")
+        await message.channel.send(questions[0][1])
+        return
 
-    # Rekomendasi
-    result = engine.get_recommendation(prefs)
-    if "error" in result:
-        print(result["error"])
-    else:
-        print("Restoran yang cocok dengan preferensimu:")
-        for r in result["restaurants"]:
-            print(f"- {r['name']}")
+    # Kalau user belum mulai → abaikan
+    if user_id not in user_sessions:
+        return
 
-if __name__ == "__main__":
-    run_chatbot()
+    session = user_sessions[user_id]
+    step = session["step"]
+
+    if step < len(questions):
+        key, qtext = questions[step]
+
+        # Kalau user skip ("" atau "\") → langsung next
+        if content not in ["", "\\"]:
+            parsed = patterns.detect(content)
+            if parsed.get(key):
+                session["prefs"][key] = parsed[key]
+
+        # Naik ke pertanyaan berikutnya
+        session["step"] += 1
+        if session["step"] < len(questions):
+            next_q = questions[session["step"]][1]
+            await message.channel.send(next_q)
+        else:
+            # Semua pertanyaan selesai → kasih rekomendasi
+            result = engine.get_recommendation(session["prefs"])
+            if "error" in result:
+                await message.channel.send(result["error"])
+            else:
+                await message.channel.send("Restoran yang cocok dengan preferensimu:")
+                for r in result["restaurants"]:
+                    await message.channel.send(f"- {r['name']}")
+
+            # Reset sesi setelah rekomendasi
+            del user_sessions[user_id]

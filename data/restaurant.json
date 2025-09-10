@@ -7,7 +7,7 @@
         "food_type": ["rice", "noodle"],
         "mood": ["neutral", "stress", "tired"],
         "time_based": "24h",
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Kedai Den Bagoes",
@@ -15,7 +15,7 @@
         "food_type": ["rice", "noodle"],
         "mood": ["neutral", "stress", "tired"],
         "time_based": "24h",
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Es Pisang Ijo La Capila",
@@ -23,7 +23,7 @@
         "food_type": ["traditional","dessert"],
         "mood": ["happy", "celebration", "neutral"],
         "time_based": ["afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Bakso Woyo Woyo",
@@ -31,7 +31,7 @@
         "food_type": "traditional",
         "mood": ["stress", "bored", "tired", "sick"],
         "time_based": ["lunch","afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Kopi Klotok",
@@ -39,7 +39,7 @@
         "food_type": "traditional",
         "mood": ["stress", "bored", "tired"],
         "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Ayam Geprek Bu Rum",
@@ -47,7 +47,7 @@
         "food_type": "rice",
         "mood": "casual",
         "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Warung Santai",
@@ -55,7 +55,7 @@
         "food_type": "traditional",
         "mood": ["neutral", "stress", "tired"],
         "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Susu Sarjana",
@@ -63,7 +63,7 @@
         "food_type": "dessert",
         "mood": ["happy", "celebration", "neutral", "bored"],
         "time_based": ["afternoon", "night"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       }
     ],
     "medium": [
@@ -105,7 +105,7 @@
         "food_type": "traditional",
         "mood": ["neutral", "happy", "celebration"],
         "time_based": "24h",
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Legend Coffee",
@@ -113,7 +113,7 @@
         "food_type": "western",
         "mood": ["bored", "neutral", "happy"],
         "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Sate Ratu",
@@ -121,7 +121,7 @@
         "food_type": "traditional",
         "mood": ["celebration", "happy", "neutral"],
         "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "HokBen Kaliurang",
@@ -145,7 +145,7 @@
         "food_type": "traditional",
         "mood": ["neutral", "stress", "tired"],
         "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Warung Gudeg Yu Djum",
@@ -153,7 +153,7 @@
         "food_type": "traditional",
         "mood": ["neutral", "happy", "stress"],
         "time_based": ["breakfast", "lunch"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       }
     ],
     "high": [
@@ -195,7 +195,7 @@
         "food_type": "japanese",
         "mood": ["celebration", "happy", "neutral"],
         "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       }
     ]
   },
@@ -207,7 +207,7 @@
         "food_type": "traditional",
         "mood": ["neutral", "stress", "tired", "bored", "happy"],
         "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Ayam Geprek Kantin FT",
@@ -215,7 +215,7 @@
         "food_type": "rice",
         "mood": ["neutral", "stress", "tired"],
         "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Warung Masakan Jawa",
@@ -223,7 +223,7 @@
         "food_type": ["rice", "traditional"],
         "mood": ["neutral", "stress", "tired"],
         "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Bakso Kantin FT",
@@ -231,7 +231,7 @@
         "food_type": ["noodle", "traditional"],
         "mood": ["neutral", "stress", "tired", "sick", "bored"],
         "time_based": ["lunch", "afternoon"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Soto Kantin FT",
@@ -239,7 +239,7 @@
         "food_type": ["rice", "traditional"],
         "mood": ["neutral", "stress", "tired", "sick", "bored"],
         "time_based": ["breakfast", "lunch","afternoon"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "Drink Corner Kantin FT",
@@ -247,7 +247,7 @@
         "food_type": "beverages",
         "mood": ["neutral", "stress", "tired", "sick", "bored", "happy"],
         "time_based": ["breakfast", "lunch","afternoon"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       }
     ]
   },
@@ -259,7 +259,7 @@
         "food_type": "beverages",
         "mood": ["neutral", "tired", "stress"],
         "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "GoFood Delivery - Gokana Ramen",
@@ -267,15 +267,15 @@
         "food_type": ["noodle", "japanese"],
         "mood": ["neutral", "happy", "sick"],
         "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": ""
+        "dietary_restriction": "halal"
       },
       {
         "name": "ShopeeFood Delivery - Mie Gacoan",
         "specialty": ["Mie Pedas", "Dimsum"],
         "food_type": "noodle",
         "mood": ["neutral", "stress", "tired", "bored", "happy", "celebration"],
-        "time_based": "24h",
-        "dietary_restriction": ""
+        "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
+        "dietary_restriction": "halal"
       }
     ],
     "high": 
