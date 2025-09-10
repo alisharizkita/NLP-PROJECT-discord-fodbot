@@ -1,293 +1,342 @@
-{
-  "off-campus": {
-    "low": [
-      {
-        "name": "Warmindo Sami Asih",
-        "specialty": "Nasi Orak Arik",
-        "food_type": ["rice", "noodle"],
-        "mood": ["neutral", "stress", "tired"],
-        "time_based": "24h",
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Kedai Den Bagoes",
-        "specialty": "Nasi Goreng Tuna",
-        "food_type": ["rice", "noodle"],
-        "mood": ["neutral", "stress", "tired"],
-        "time_based": "24h",
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Es Pisang Ijo La Capila",
-        "specialty": ["Es Pisang Ijo", "Coto Makassar"],
-        "food_type": ["traditional","dessert"],
-        "mood": ["happy", "celebration", "neutral"],
-        "time_based": ["afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Bakso Woyo Woyo",
-        "specialty": "Aneka Bakso",
-        "food_type": "traditional",
-        "mood": ["stress", "bored", "tired", "sick"],
-        "time_based": ["lunch","afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Kopi Klotok",
-        "specialty": ["Nasi Lodeh","Pisang Goreng"],
-        "food_type": "traditional",
-        "mood": ["stress", "bored", "tired"],
-        "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Ayam Geprek Bu Rum",
-        "specialty": "Ayam Geprek",
-        "food_type": "rice",
-        "mood": "casual",
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Warung Santai",
-        "specialty": "Nasi Sayur Komplit",
-        "food_type": "traditional",
-        "mood": ["neutral", "stress", "tired"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Susu Sarjana",
-        "specialty": "Flavored Milk",
-        "food_type": "dessert",
-        "mood": ["happy", "celebration", "neutral", "bored"],
-        "time_based": ["afternoon", "night"],
-        "dietary_restriction": "halal"
-      }
-    ],
-    "medium": [
-      {
-        "name": "KFC UGM Mirota",
-        "specialty": "Fried Chicken & Burgers",
-        "food_type": "western",
-        "mood": ["neutral", "happy", "stress"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "McDonald's Kaliurang",
-        "specialty": "Big Mac",
-        "food_type": "western",
-        "mood": ["neutral", "happy", "tired", "celebration"],
-        "time_based": "24h",
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Warung Spesial Sambal (SS)",
-        "specialty": "Lalapan Sambal Variants",
-        "food_type": "traditional",
-        "mood": ["stress", "bored", "neutral"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "SGPC Bu Wiryo 1959",
-        "specialty": "Nasi Pecel (SGPC)",
-        "food_type": "rice",
-        "mood": ["neutral", "tired", "bored"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
-        "dietary_restriction": "vegetarian-friendly options"
-      },
-      {
-        "name": "House of Raminten",
-        "specialty": "Nasi Kucing & Wedang",
-        "food_type": "traditional",
-        "mood": ["neutral", "happy", "celebration"],
-        "time_based": "24h",
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Legend Coffee",
-        "specialty": "Coffee & Snacks",
-        "food_type": "western",
-        "mood": ["bored", "neutral", "happy"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Sate Ratu",
-        "specialty": "Sate Ayam Merah",
-        "food_type": "traditional",
-        "mood": ["celebration", "happy", "neutral"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "HokBen Kaliurang",
-        "specialty": "Bento Box",
-        "food_type": "japanese",
-        "mood": ["neutral", "happy", "celebration"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Tempo Gelato Kaliurang",
-        "specialty": "Gelato & Sorbet",
-        "food_type": "dessert",
-        "mood": ["happy", "celebration", "bored"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
-        "dietary_restriction": "dairy-free sorbet options"
-      },
-      {
-        "name": "Warung Bu Ageng",
-        "specialty": "Javanese Cuisine",
-        "food_type": "traditional",
-        "mood": ["neutral", "stress", "tired"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Warung Gudeg Yu Djum",
-        "specialty": "Gudeg",
-        "food_type": "traditional",
-        "mood": ["neutral", "happy", "stress"],
-        "time_based": ["breakfast", "lunch"],
-        "dietary_restriction": "halal"
-      }
-    ],
-    "high": [
-      {
-        "name": "Sushi Tei",
-        "specialty": "Salmon Sushi",
-        "food_type": "japanese",
-        "mood": ["celebration", "happy", "neutral"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal options"
-      },
-      {
-        "name": "Marugame Udon",
-        "specialty": "Udon",
-        "food_type": "noodle",
-        "mood": ["neutral", "tired", "celebration", "happy"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "vegetarian options"
-      },
-      {
-        "name": "Seorae Korean BBQ",
-        "specialty": "Samgyeopsal",
-        "food_type": "korean",
-        "mood": ["celebration", "happy", "neutral"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Excelso Hartono Mall",
-        "specialty": "Coffee & Pasta",
-        "food_type": "western",
-        "mood": ["tired", "neutral", "stress"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Kakoi Auce",
-        "specialty": "All You Can Eat Shabu",
-        "food_type": "japanese",
-        "mood": ["celebration", "happy", "neutral"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      }
-    ]
+[
+  {
+    "name": "Warmindo Sami Asih",
+    "specialty": "Nasi Orak Arik",
+    "food_type": ["rice", "noodle"],
+    "mood": ["neutral", "stress", "tired"],
+    "time_based": "24h",
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
   },
-  "campus": {
-    "low": [
-      {
-        "name": "Siomay Bandung Kantin FT",
-        "specialty": "Siomay Ikan Saus Kacang",
-        "food_type": "traditional",
-        "mood": ["neutral", "stress", "tired", "bored", "happy"],
-        "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Ayam Geprek Kantin FT",
-        "specialty": "Ayam Geprek",
-        "food_type": "rice",
-        "mood": ["neutral", "stress", "tired"],
-        "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Warung Masakan Jawa",
-        "specialty": "Susu Segar",
-        "food_type": ["rice", "traditional"],
-        "mood": ["neutral", "stress", "tired"],
-        "time_based": ["breakfast", "lunch", "afternoon"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Bakso Kantin FT",
-        "specialty": ["Bakso", "Mie Ayam"],
-        "food_type": ["noodle", "traditional"],
-        "mood": ["neutral", "stress", "tired", "sick", "bored"],
-        "time_based": ["lunch", "afternoon"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Soto Kantin FT",
-        "specialty": "Soto Seger dan Aneka Sate",
-        "food_type": ["rice", "traditional"],
-        "mood": ["neutral", "stress", "tired", "sick", "bored"],
-        "time_based": ["breakfast", "lunch","afternoon"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "Drink Corner Kantin FT",
-        "specialty": "Aneka Jus dan Minuman Dingin",
-        "food_type": "beverages",
-        "mood": ["neutral", "stress", "tired", "sick", "bored", "happy"],
-        "time_based": ["breakfast", "lunch","afternoon"],
-        "dietary_restriction": "halal"
-      }
-    ]
+  {
+    "name": "Kedai Den Bagoes",
+    "specialty": "Nasi Goreng Tuna",
+    "food_type": ["rice", "noodle"],
+    "mood": ["neutral", "stress", "tired"],
+    "time_based": "24h",
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
   },
-  "delivery": {
-    "medium": [
-      {
-        "name": "GrabFood Delivery - Kopi Kenangan",
-        "specialty": "Es Kopi Kenangan Mantan",
-        "food_type": "beverages",
-        "mood": ["neutral", "tired", "stress"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "GoFood Delivery - Gokana Ramen",
-        "specialty": "Ramen",
-        "food_type": ["noodle", "japanese"],
-        "mood": ["neutral", "happy", "sick"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "halal"
-      },
-      {
-        "name": "ShopeeFood Delivery - Mie Gacoan",
-        "specialty": ["Mie Pedas", "Dimsum"],
-        "food_type": "noodle",
-        "mood": ["neutral", "stress", "tired", "bored", "happy", "celebration"],
-        "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
-        "dietary_restriction": "halal"
-      }
-    ],
-    "high": 
-    [
-      {
-        "name": "Pizza Hut Kaliurang",
-        "specialty": "Pan Pizza",
-        "food_type": "western",
-        "mood": ["celebration", "happy", "neutral"],
-        "time_based": ["lunch", "afternoon", "dinner"],
-        "dietary_restriction": "vegetarian options"
-      }
-    ]
+  {
+    "name": "Es Pisang Ijo La Capila",
+    "specialty": ["Es Pisang Ijo", "Coto Makassar"],
+    "food_type": ["traditional","dessert"],
+    "mood": ["happy", "celebration", "neutral"],
+    "time_based": ["afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
+  },
+  {
+    "name": "Bakso Woyo Woyo",
+    "specialty": "Aneka Bakso",
+    "food_type": "traditional",
+    "mood": ["stress", "bored", "tired", "sick"],
+    "time_based": ["lunch","afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
+  },
+  {
+    "name": "Kopi Klotok",
+    "specialty": ["Nasi Lodeh","Pisang Goreng"],
+    "food_type": "traditional",
+    "mood": ["stress", "bored", "tired"],
+    "time_based": ["breakfast", "lunch", "afternoon"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
+  },
+  {
+    "name": "Ayam Geprek Bu Rum",
+    "specialty": "Ayam Geprek",
+    "food_type": "rice",
+    "mood": "casual",
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
+  },
+  {
+    "name": "Warung Santai",
+    "specialty": "Nasi Sayur Komplit",
+    "food_type": "traditional",
+    "mood": ["neutral", "stress", "tired"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
+  },
+  {
+    "name": "Susu Sarjana",
+    "specialty": "Flavored Milk",
+    "food_type": "dessert",
+    "mood": ["happy", "celebration", "neutral", "bored"],
+    "time_based": ["afternoon", "night"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "low"
+  },
+  {
+    "name": "KFC UGM Mirota",
+    "specialty": "Fried Chicken & Burgers",
+    "food_type": "western",
+    "mood": ["neutral", "happy", "stress"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "McDonald's Kaliurang",
+    "specialty": "Big Mac",
+    "food_type": "western",
+    "mood": ["neutral", "happy", "tired", "celebration"],
+    "time_based": "24h",
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "Warung Spesial Sambal (SS)",
+    "specialty": "Lalapan Sambal Variants",
+    "food_type": "traditional",
+    "mood": ["stress", "bored", "neutral"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "SGPC Bu Wiryo 1959",
+    "specialty": "Nasi Pecel (SGPC)",
+    "food_type": "rice",
+    "mood": ["neutral", "tired", "bored"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
+    "dietary_restriction": "vegetarian-friendly options",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "House of Raminten",
+    "specialty": "Nasi Kucing & Wedang",
+    "food_type": "traditional",
+    "mood": ["neutral", "happy", "celebration"],
+    "time_based": "24h",
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "Legend Coffee",
+    "specialty": "Coffee & Snacks",
+    "food_type": "western",
+    "mood": ["bored", "neutral", "happy"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "Sate Ratu",
+    "specialty": "Sate Ayam Merah",
+    "food_type": "traditional",
+    "mood": ["celebration", "happy", "neutral"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "HokBen Kaliurang",
+    "specialty": "Bento Box",
+    "food_type": "japanese",
+    "mood": ["neutral", "happy", "celebration"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "Tempo Gelato Kaliurang",
+    "specialty": "Gelato & Sorbet",
+    "food_type": "dessert",
+    "mood": ["happy", "celebration", "bored"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
+    "dietary_restriction": "dairy-free sorbet options",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "Warung Bu Ageng",
+    "specialty": "Javanese Cuisine",
+    "food_type": "traditional",
+    "mood": ["neutral", "stress", "tired"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "Warung Gudeg Yu Djum",
+    "specialty": "Gudeg",
+    "food_type": "traditional",
+    "mood": ["neutral", "happy", "stress"],
+    "time_based": ["breakfast", "lunch"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "medium"
+  },
+  {
+    "name": "Sushi Tei",
+    "specialty": "Salmon Sushi",
+    "food_type": "japanese",
+    "mood": ["celebration", "happy", "neutral"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal options",
+    "location": "off-campus",
+    "budget": "high"
+  },
+  {
+    "name": "Marugame Udon",
+    "specialty": "Udon",
+    "food_type": "noodle",
+    "mood": ["neutral", "tired", "celebration", "happy"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "vegetarian options",
+    "location": "off-campus",
+    "budget": "high"
+  },
+  {
+    "name": "Seorae Korean BBQ",
+    "specialty": "Samgyeopsal",
+    "food_type": "korean",
+    "mood": ["celebration", "happy", "neutral"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "high"
+  },
+  {
+    "name": "Excelso Hartono Mall",
+    "specialty": "Coffee & Pasta",
+    "food_type": "western",
+    "mood": ["tired", "neutral", "stress"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "high"
+  },
+  {
+    "name": "Kakoi Auce",
+    "specialty": "All You Can Eat Shabu",
+    "food_type": "japanese",
+    "mood": ["celebration", "happy", "neutral"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "off-campus",
+    "budget": "high"
+  },
+  {
+    "name": "Siomay Bandung Kantin FT",
+    "specialty": "Siomay Ikan Saus Kacang",
+    "food_type": "traditional",
+    "mood": ["neutral", "stress", "tired", "bored", "happy"],
+    "time_based": ["breakfast", "lunch", "afternoon"],
+    "dietary_restriction": "halal",
+    "location": "campus",
+    "budget": "low"
+  },
+  {
+    "name": "Ayam Geprek Kantin FT",
+    "specialty": "Ayam Geprek",
+    "food_type": "rice",
+    "mood": ["neutral", "stress", "tired"],
+    "time_based": ["breakfast", "lunch", "afternoon"],
+    "dietary_restriction": "halal",
+    "location": "campus",
+    "budget": "low"
+  },
+  {
+    "name": "Warung Masakan Jawa",
+    "specialty": "Susu Segar",
+    "food_type": ["rice", "traditional"],
+    "mood": ["neutral", "stress", "tired"],
+    "time_based": ["breakfast", "lunch", "afternoon"],
+    "dietary_restriction": "halal",
+    "location": "campus",
+    "budget": "low"
+  },
+  {
+    "name": "Bakso Kantin FT",
+    "specialty": ["Bakso", "Mie Ayam"],
+    "food_type": ["noodle", "traditional"],
+    "mood": ["neutral", "stress", "tired", "sick", "bored"],
+    "time_based": ["lunch", "afternoon"],
+    "dietary_restriction": "halal",
+    "location": "campus",
+    "budget": "low"
+  },
+  {
+    "name": "Soto Kantin FT",
+    "specialty": "Soto Seger dan Aneka Sate",
+    "food_type": ["rice", "traditional"],
+    "mood": ["neutral", "stress", "tired", "sick", "bored"],
+    "time_based": ["breakfast", "lunch","afternoon"],
+    "dietary_restriction": "halal",
+    "location": "campus",
+    "budget": "low"
+  },
+  {
+    "name": "Drink Corner Kantin FT",
+    "specialty": "Aneka Jus dan Minuman Dingin",
+    "food_type": "beverages",
+    "mood": ["neutral", "stress", "tired", "sick", "bored", "happy"],
+    "time_based": ["breakfast", "lunch","afternoon"],
+    "dietary_restriction": "halal",
+    "location": "campus",
+    "budget": "low"
+  },
+  {
+    "name": "GrabFood Delivery - Kopi Kenangan",
+    "specialty": "Es Kopi Kenangan Mantan",
+    "food_type": "beverages",
+    "mood": ["neutral", "tired", "stress"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "delivery",
+    "budget": "medium"
+  },
+  {
+    "name": "GoFood Delivery - Gokana Ramen",
+    "specialty": "Ramen",
+    "food_type": ["noodle", "japanese"],
+    "mood": ["neutral", "happy", "sick"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "halal",
+    "location": "delivery",
+    "budget": "medium"
+  },
+  {
+    "name": "ShopeeFood Delivery - Mie Gacoan",
+    "specialty": ["Mie Pedas", "Dimsum"],
+    "food_type": "noodle",
+    "mood": ["neutral", "stress", "tired", "bored", "happy", "celebration"],
+    "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
+    "dietary_restriction": "halal",
+    "location": "delivery",
+    "budget": "medium"
+  },
+  {
+    "name": "Pizza Hut Kaliurang",
+    "specialty": "Pan Pizza",
+    "food_type": "western",
+    "mood": ["celebration", "happy", "neutral"],
+    "time_based": ["lunch", "afternoon", "dinner"],
+    "dietary_restriction": "vegetarian options",
+    "location": "delivery",
+    "budget": "high"
   }
-}
+]
