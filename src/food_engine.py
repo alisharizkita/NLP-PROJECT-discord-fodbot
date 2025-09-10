@@ -12,39 +12,52 @@ class FoodRecommendationEngine:
             self.restaurants = json.load(f)
         self.patterns = FoodPatterns()
 
-    def get_recommendation(self, message: str) -> dict:
-        prefs = self.patterns.detect(message)
-
+    def get_recommendation(self, prefs: dict) -> dict:
         location = prefs.get("location")
         budget = prefs.get("budget")
         food_type = prefs.get("food_type")
+        mood = prefs.get("mood")
+        time_based = prefs.get("time_based")
+        dietary_restriction = prefs.get("dietary_restriction")
 
-        if not location or not budget:
-            return {
-                "error": "Tolong sebutkan lokasi (campus/off-campus/delivery) dan budget (low/medium/high).",
-                "detected": prefs
-            }
+        # Mulai filter
+        candidates = []
 
-        candidates = self.restaurants.get(location, {}).get(budget, [])
+        # Filter lokasi dan budget dulu, tapi jika kosong ambil semua
+        locations_to_check = [location] if location else self.restaurants.keys()
+        for loc in locations_to_check:
+            loc_bucket = self.restaurants.get(loc, {})
+            budgets_to_check = [budget] if budget else loc_bucket.keys()
+            for b in budgets_to_check:
+                candidates.extend(loc_bucket.get(b, []))
 
+        # Filter lainnya hanya jika ada
         if food_type:
             candidates = [
-                r for r in candidates if (
-                    (isinstance(r["food_type"], list) and food_type in r["food_type"])
-                    or (isinstance(r["food_type"], str) and r["food_type"] == food_type)
-                )
+                r for r in candidates
+                if (isinstance(r["food_type"], list) and food_type in r["food_type"])
+                or (isinstance(r["food_type"], str) and r["food_type"] == food_type)
+            ]
+        if mood:
+            candidates = [
+                r for r in candidates
+                if (isinstance(r["mood"], list) and mood in r["mood"])
+                or (isinstance(r["mood"], str) and r["mood"] == mood)
+            ]
+        if time_based:
+            candidates = [
+                r for r in candidates
+                if (isinstance(r["time_based"], list) and time_based in r["time_based"])
+                or (isinstance(r["time_based"], str) and r["time_based"] == time_based)
+            ]
+        if dietary_restriction:
+            candidates = [
+                r for r in candidates
+                if (isinstance(r.get("dietary_restriction", ""), list) and dietary_restriction in r.get("dietary_restriction", ""))
+                or (isinstance(r.get("dietary_restriction", ""), str) and dietary_restriction in r.get("dietary_restriction", ""))
             ]
 
         if not candidates:
-            return {
-                "error": f"Tidak ditemukan rekomendasi dengan preferensi {prefs}",
-                "detected": prefs
-            }
+            return {"error": f"Tidak ada restoran yang cocok dengan kriteria {prefs}", "matches": []}
 
-        return random.choice(candidates)
-
-    def process(self, user_input: str) -> dict:
-        """
-        Extract budget, location, and food_type from user input.
-        """
-        return self.patterns.detect(user_input)
+        return {"matches": [r["name"] for r in candidates], "restaurants": candidates}
