@@ -18,9 +18,8 @@ This chatbot helps students make quick food decisions based on their budget, loc
 
 - Language: Python 3.8+
 - Platform: Discord (discord.py)
-- NLP: Regex patterns + Pronoun reflection
+- NLP: Regex patterns
 - Database: JSON-based restaurant data
--
 
 ## 📦 *Setup*
 
