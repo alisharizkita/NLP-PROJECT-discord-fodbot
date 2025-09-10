@@ -6,6 +6,11 @@ A rule-based chatbot with pronoun reflection that provides personalized food rec
 
 This chatbot helps students make quick food decisions based on their budget, location preferences, mood, and time constraints. Built using regex pattern matching and natural language processing techniques with Indonesian language support.
 
+## 🧑‍💻 *Team Member*
+
+- Rizkita Alisha Ramadhani - 22/494942/TK/54347 
+- Gabriella Eileen Gultom - 22/492673/TK/53930 
+
 ## 🎯 *Key Features*
 
 - Rule-based recommendation using regex pattern matching
