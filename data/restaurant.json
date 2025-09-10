@@ -324,7 +324,7 @@
     "specialty": ["Mie Pedas", "Dimsum"],
     "food_type": "noodle",
     "mood": ["neutral", "stress", "tired", "bored", "happy", "celebration"],
-    "time_based": ["breakfast", "lunch", "afternoon", "dinner", "midnight"],
+    "time_based": "24h",
     "dietary_restriction": "halal",
     "location": "delivery",
     "budget": "medium"

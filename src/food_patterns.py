@@ -13,7 +13,7 @@ class FoodPatterns:
         self.food_type_patterns = [
             (r'\b(?:japanese|sushi|ramen|bento|sashimi|takoyaki|yakiniku)\b', 'japanese'),
             (r'\b(?:nasi|rice|indonesian|makan\s*kenyang)\b', 'rice'),
-            (r'\b(?:mie|noodle|bakmi|mie\s*ayam|kuah)\b', 'noodle'),
+            (r'\b(?:mie|noodle|bakmi|mie\s*ayam|kuah|mi)\b', 'noodle'),
             (r'\b(?:western|burger|pizza|steak|sandwich|pasta)\b', 'western'),
             (r'\b(?:minuman|drink|coffee|kopi|jus|es|seger|juice)\b', 'beverages'),
             (r'\b(?:dessert|manis|ice\s*cream|sweet|es|gelato)\b', 'desserts'),
@@ -23,6 +23,7 @@ class FoodPatterns:
 
         # Budget patterns
         self.budget_patterns = [
+            (r'([0-9]+)', self.extract_budget_number),
             (r'budget\s*([0-9]+)\s*(ribu|rb|k)', self.extract_budget_number),
             (r'([0-9]+)\s*(ribu|rb|k)', self.extract_budget_number),
             (r'murah|hemat|budget\s*kecil|kantong\s*tipis|kantong\s*kering', 'low'),
@@ -63,6 +64,11 @@ class FoodPatterns:
 
     def extract_budget_number(self, match):
         amount = int(match.group(1))
+        unit = match.group(2).lower() if match.lastindex >= 2 and match.group(2) else ""
+
+        # Convert based on unit
+        if unit in ["k", "rb", "ribu"]:
+            amount *= 1000
         if amount <= 15000:
             return "low"
         elif amount <= 30000:

@@ -49,8 +49,10 @@ class FoodRecommendationEngine:
         if time_based:
             candidates = [
                 r for r in candidates
-                if (isinstance(r["time_based"], list) and time_based in r["time_based"])
-                or (isinstance(r["time_based"], str) and r["time_based"] == time_based)
+                if (
+                    (isinstance(r["time_based"], list) and (time_based in r["time_based"] or "24h" in r["time_based"]))
+                    or (isinstance(r["time_based"], str) and (r["time_based"] == time_based or r["time_based"] == "24h"))
+                )
             ]
 
         # Filter dietary_restriction
