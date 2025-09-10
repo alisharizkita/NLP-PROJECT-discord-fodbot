@@ -16,7 +16,7 @@ This chatbot helps students make quick food decisions based on their budget, loc
 
 ## 🔧 *Technology Stack*
 
-- Language: Python 3.8+
+- Language: Python 3.11+
 - Platform: Discord (discord.py)
 - NLP: Regex patterns
 - Database: JSON-based restaurant data
