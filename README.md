@@ -53,7 +53,7 @@ pip install -r requirements.txt
 Buat file .env di root folder:
 
 ```bash
-DISCORD_TOKEN=your
+DISCORD_TOKEN=your_token_here
 ```
 
 ## ▶️ *Run*
